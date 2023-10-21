@@ -8,6 +8,7 @@ buildscript {
     repositories {
         mavenCentral()
         google()
+        
     }
     dependencies {
         // Note for FTC Teams: Do not modify this yourself.
@@ -15,13 +16,6 @@ buildscript {
     }
 }
 
-plugins {
-    id 'java'
-}
-
-javadoc {
-    destinationDir = file("${buildDir}/docs/javadoc")
-}
 
 // This is now required because aapt2 has to be downloaded from the
 // google() repository beginning with version 3.2 of the Android Gradle Plugin
@@ -36,4 +30,15 @@ repositories {
     mavenCentral()
 }
 
+apply plugin: 'org.ajoberstar.github-pages'
 
+githubPages {
+  repoUri = 'git@github.com:username/repo.git' // defaults to this project's origin URI
+  targetBranch = 'some-branch' // defaults to gh-pages  
+  pages {
+    from javadoc
+    // by default this will copy into the root of the gh-pages branch and delete any previous files
+    // customizing the destination will only delete files within that target dir
+    into "docs/${version}"
+  }
+}

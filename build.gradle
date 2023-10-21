@@ -27,3 +27,11 @@ allprojects {
 repositories {
     mavenCentral()
 }
+
+plugins {
+    id 'java'
+}
+
+javadoc {
+    destinationDir = file("${buildDir}/docs/javadoc")
+}

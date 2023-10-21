@@ -17,7 +17,7 @@ buildscript {
 }
 
 plugins {
-    id 'org.ajoberstar.git-publish' version '<version>'
+    id 'org.ajoberstar.git-publish' version "3.0.0"
 }
 
 // This is now required because aapt2 has to be downloaded from the

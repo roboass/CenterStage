@@ -1,1 +1,2 @@
 Viata e grele.
+sincer
